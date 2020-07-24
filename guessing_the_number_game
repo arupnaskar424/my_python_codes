@@ -1,26 +1,26 @@
 import random
 def guess_game():
-    secret_number=random.randint(0,50)
+    secret_number=random.randint(0,100)
     guess_count=1
     guess_limit=10
     while guess_count<=guess_limit:
-        guess=int(input('guess the secret number between 0 to 50: '))
+        guess=int(input('guess the secret number between 0 to 100: '))
         if guess==secret_number:
             print(f'congratulation!! you guessed it right!!\nyou took {guess_count} steps to guess')
             break
         elif guess>secret_number:
-            print('you entered a larger number, please try with smaller number')
+            print(f'you entered a larger number, please try with smaller number,[{guess_limit-guess_count} chances left]')
             guess_count+=1
             continue
         else:
-            print('you entered a smaller number, please try with larger number')
+            print(f'you entered a smaller number, please try with larger number,[{guess_limit-guess_count} chances left]')
             guess_count += 1
             continue
     else:
         print('sorry!! you lost the game:')
 
 
-print('welcome to "GUESS THE CORRECT NUMBER" \n enter any number between 0 to 50')
+print('welcome to "GUESS THE CORRECT NUMBER"\nenter any number between 0 to 100\nTotal 10 chances')
 
 while True:
     user_input = input('enter start to start the game: ')
